@@ -1,59 +1,58 @@
-import Vue from 'vue'
-
-// base library
-import {
-  ConfigProvider,
-  Layout,
-  Input,
-  InputNumber,
-  Button,
-  Switch,
-  Radio,
-  Checkbox,
-  Select,
-  Card,
-  Form,
-  Row,
-  Col,
-  Modal,
-  Table,
-  Tabs,
-  Icon,
-  Badge,
-  Popover,
-  Dropdown,
-  List,
-  Avatar,
-  Breadcrumb,
-  Steps,
-  Spin,
-  Menu,
-  Drawer,
-  Tooltip,
-  Alert,
-  Tag,
-  Divider,
-  DatePicker,
-  TimePicker,
-  Upload,
-  Progress,
-  Skeleton,
-  Popconfirm,
-  PageHeader,
-  Result,
-  Statistic,
-  Descriptions,
-  message,
-  notification
-} from 'ant-design-vue'
-import Viser from 'viser-vue'
-
-// ext library
-import VueCropper from 'vue-cropper'
 import Dialog from '@/components/Dialog'
 import MultiTab from '@/components/MultiTab'
 import PageLoading from '@/components/PageLoading'
 import PermissionHelper from '@/utils/helper/permission'
+// base library
+import {
+  Alert,
+  Avatar,
+  Badge,
+  Breadcrumb,
+  Button,
+  Card,
+  Checkbox,
+  Col,
+  ConfigProvider,
+  DatePicker,
+  Descriptions,
+  Divider,
+  Drawer,
+  Dropdown,
+  Form,
+  Icon,
+  Input,
+  InputNumber,
+  Layout,
+  List,
+  Menu,
+  message,
+  Modal,
+  notification,
+  PageHeader,
+  Popconfirm,
+  Popover,
+  Progress,
+  Radio,
+  Result,
+  Row,
+  Select,
+  Skeleton,
+  Spin,
+  Statistic,
+  Steps,
+  Switch,
+  Table,
+  Tabs,
+  Tag,
+  TimePicker,
+  Tooltip,
+  Transfer,
+  Upload
+} from 'ant-design-vue'
+import Viser from 'viser-vue'
+import Vue from 'vue'
+// ext library
+import VueCropper from 'vue-cropper'
 import './directives/action'
 
 Vue.use(ConfigProvider)
@@ -85,6 +84,8 @@ Vue.use(Menu)
 Vue.use(Drawer)
 Vue.use(Tooltip)
 Vue.use(Alert)
+Vue.use(Transfer)
+Vue.use(Descriptions)
 Vue.use(Tag)
 Vue.use(Divider)
 Vue.use(DatePicker)
@@ -96,7 +97,6 @@ Vue.use(Popconfirm)
 Vue.use(PageHeader)
 Vue.use(Result)
 Vue.use(Statistic)
-Vue.use(Descriptions)
 
 Vue.prototype.$confirm = Modal.confirm
 Vue.prototype.$message = message

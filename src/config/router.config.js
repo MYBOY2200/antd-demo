@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import { bxAnaalyse } from '@/core/icons'
-import { BasicLayout, UserLayout } from '@/layouts'
+import { BasicLayout, PageView, UserLayout } from '@/layouts'
 
 const RouteView = {
   name: 'RouteView',
@@ -12,7 +12,7 @@ export const asyncRouterMap = [
     path: '/',
     name: 'index',
     component: BasicLayout,
-    meta: { title: 'menu.home' },
+    meta: { title: '仪表盘' },
     redirect: '/dashboard/analysis',
     children: [
       // dashboard
@@ -21,13 +21,39 @@ export const asyncRouterMap = [
         name: 'dashboard',
         redirect: '/dashboard/analysis',
         component: RouteView,
-        meta: { title: 'menu.dashboard', keepAlive: true, icon: bxAnaalyse, permission: ['dashboard'] },
+        meta: { title: '仪表盘', keepAlive: true, icon: bxAnaalyse, permission: ['dashboard'] },
         children: [
           {
             path: '/dashboard/analysis/:pageNo([1-9]\\d*)?',
             name: 'Analysis',
             component: () => import('@/views/dashboard/Analysis'),
-            meta: { title: 'menu.dashboard.analysis', keepAlive: false, permission: ['dashboard'] }
+            meta: { title: '药品费用', keepAlive: false, permission: ['dashboard'] }
+          }
+        ]
+      },
+
+      // platform
+      {
+        path: '/platform',
+        name: 'platform',
+        redirect: '/platform/roler',
+        component: PageView,
+        meta: {
+          title: '基础数据维护',
+          keepAlive: true,
+          icon: 'cluster',
+          permission: ['basicDateMgmt']
+        },
+        children: [
+          {
+            path: '/platform/roler',
+            name: 'Roler',
+            component: () => import('@/views/platform/Roler'),
+            meta: {
+              title: '角色管理',
+              keepAlive: true,
+              permission: ['roleMgmt']
+            }
           }
         ]
       },

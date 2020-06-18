@@ -1,7 +1,7 @@
 import Mock from 'mockjs2'
 import { builder, getBody } from '../util'
 
-const username = ['admin', 'super']
+const username = ['admin']
 const password = ['e10adc3949ba59abbe56e057f20f883e'] // 123456
 
 const login = options => {
