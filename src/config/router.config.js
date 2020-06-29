@@ -54,6 +54,16 @@ export const asyncRouterMap = [
               keepAlive: true,
               permission: ['roleMgmt']
             }
+          },
+          {
+            path: '/platform/department',
+            name: 'Department',
+            component: () => import('@/views/platform/Department'),
+            meta: {
+              title: '部门管理',
+              keepAlive: true,
+              permission: ['basicDateMgmt']
+            }
           }
         ]
       },
